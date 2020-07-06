@@ -63,7 +63,7 @@ namespace Square
             Radius = radius;
             if (Radius <= 0)
             {
-                throw new ArgumentException("Not circle")
+                throw new ArgumentException("Not circle");
             }
         }
 
