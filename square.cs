@@ -20,6 +20,10 @@ namespace Square
             B = b;
             C = c;
             _RightTriangle = new Lazy<bool>(CheckRightTriangle);
+            if ( (A + B) < C || (A + C) < B || (B + C) < A)
+            {    
+                throw new ArgumentException("Not triangle");
+            }
         }
         
         private bool IsRightAngled()
