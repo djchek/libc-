@@ -20,9 +20,14 @@ namespace Square
             B = b;
             C = c;
             _RightTriangle = new Lazy<bool>(CheckRightTriangle);
-            if ( (A + B) < C || (A + C) < B || (B + C) < A)
+            if ((A + B) < C || (A + C) < B || (B + C) < A)
             {    
                 throw new ArgumentException("Not triangle");
+            }
+            
+            if (A <= 0 || B <= 0 || C <= 0)
+            {
+                throw new ArgumentException("Side <= 0")
             }
         }
         
@@ -56,6 +61,10 @@ namespace Square
         public Circle (double radius)
         {
             Radius = radius;
+            if (Radius <= 0)
+            {
+                throw new ArgumentException("Not circle")
+            }
         }
 
         public static double AreaCircle()
