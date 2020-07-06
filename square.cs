@@ -22,9 +22,10 @@ namespace Square
             _RightTriangle = new Lazy<bool>(CheckRightTriangle);
         }
         
-        private bool CheckRightTriangle()
+        private bool IsRightAngled()
         {
-            if ((A*A + B*B == C*C) || (A*A + C*C == B*B)|| (A*A == B*B + C*C))
+            const delta = 0.0001;
+            if ((A*A + B*B - C*C) < delta || (A*A + C*C - B*B) < delta || (A*A - (B*B + C*C)) < delta)
             {
                 return true;
             } 
@@ -34,7 +35,7 @@ namespace Square
             }
         }
 
-        public static double AreaTriangle()
+        public double Area()
         {
             var p = (A + B + C) / 2;
             var firstcoef = p - A;
