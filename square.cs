@@ -67,7 +67,7 @@ namespace Square
             }
         }
 
-        public static double AreaCircle()
+        public double Area()
         {
             return Math.Pi * Math.Pow(radius, 2);
         }
