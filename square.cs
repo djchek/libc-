@@ -27,7 +27,7 @@ namespace Square
             
             if (A <= 0 || B <= 0 || C <= 0)
             {
-                throw new ArgumentException("Side <= 0")
+                throw new ArgumentException("Side <= 0");
             }
         }
         
